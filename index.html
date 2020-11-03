@@ -138,6 +138,12 @@
             margin-left: auto !important;
             margin-right: auto !important;
         }
+
+        .GIF-container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
     </style>
 </head>
 
@@ -146,7 +152,7 @@
         <div class="ui one column grid">
             <div class="column middle aligned">
                 <div class="container">
-                    <div style="overflow: hidden;" class="ui medium image">
+                    <div style="overflow: hidden;" class="ui medium image GIF-container">
                         <x-gif src="images/run.gif" speed="3"></x-gif>
                     </div>
                     <div>
