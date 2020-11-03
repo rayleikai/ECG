@@ -289,18 +289,7 @@
 
     <!--X-gif-->
     
-    <script>
-        if ('registerElement' in document
-            && 'createShadowRoot' in HTMLElement.prototype
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template')) {
-            // We're using a browser with native WC support!
-        } else {
-            document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
-        }
-    </script>
-    
-    <link rel="import" href="https://elercraft.github.io/ECG/x-gif.html">
+    <!--original position-->
 
     <!--semantic ui JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
@@ -444,6 +433,18 @@
 
     </script>
     <script src="sw.js"></script>
+    <script>
+        if ('registerElement' in document
+            && 'createShadowRoot' in HTMLElement.prototype
+            && 'import' in document.createElement('link')
+            && 'content' in document.createElement('template')) {
+            // We're using a browser with native WC support!
+        } else {
+            document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
+        }
+    </script>
+    
+    <link rel="import" href="https://elercraft.github.io/ECG/x-gif.html">
 </body>
 
 </html>
