@@ -135,7 +135,10 @@
                 <div class="container">
                     <div style="display: flex; justify-content: center;">
                         <div class="ui medium image">
+                            <img src="images/heart-red.svg">
+                            <!--
                             <x-gif stopped src="images/run.gif" speed="1"></x-gif>
+                            -->
                         </div>
                     </div>
                     <div>
@@ -366,6 +369,11 @@
                     reverse: 'auto', // default setting
                     interval: 120
                 });
+            }
+
+            if(next==="index"){
+                let Area = document.getElementsByClassName("ui medium image");
+                Area.innerHTML = '<x-gif src="images/run.gif" speed="1"></x-gif>';
             }
             /*
             if (next === "index") {
