@@ -495,12 +495,12 @@
         var setSizes = function(w, h) {
             canvas.width = 285/*w * get_canvas_scale()*/;
             canvas.height = 160/*h * get_canvas_scale()*/;
-            toolbar.style.minWidth = ( w * get_canvas_scale() ) + 'px';
+            //toolbar.style.minWidth = ( w * get_canvas_scale() ) + 'px';
 
-            tmpCanvas.width = w;
-            tmpCanvas.height = h;
-            tmpCanvas.style.width = w + 'px';
-            tmpCanvas.style.height = h + 'px';
+            tmpCanvas.width = 285/*w*/;
+            tmpCanvas.height = 160/*h*/;
+            tmpCanvas.style.width = 285/*w*/ + 'px';
+            tmpCanvas.style.height = 160/*h*/ + 'px';
             tmpCanvas.getContext('2d').setTransform(1, 0, 0, 1, 0, 0);
         };
 
