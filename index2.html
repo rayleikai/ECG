@@ -311,10 +311,13 @@
                 });
             }
         });*/
-        var runner = new SuperGif({ gif: document.getElementById('animation') } );
+        var runner = new SuperGif({ gif: document.getElementById('animation') });
         runner.load();
-        $(".jsgif").style.height = "100%";
-        
+        $(document).ready(() => {
+            $(".jsgif>canvas").style.height = "100%";
+        })
+
+
 
         /* heartbeat */
         /*
