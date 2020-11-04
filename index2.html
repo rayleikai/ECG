@@ -7,10 +7,6 @@
     <meta name="theme-color" content="#343a40">
     <title>Muscle</title>
 
-    <!--giflib-->
-    <script type="text/javascript" src="libgif.js"></script>
-    <script type="text/javascript" src="rubbable.js"></script>
-
     <!--manifest.json-->
     <link rel="manifest" href="manifest.json">
 
@@ -297,8 +293,13 @@
         integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
         crossorigin="anonymous"></script>
 
+    <!--giflib-->
+    <script type="text/javascript" src="libgif.js"></script>
+    <script type="text/javascript" src="rubbable.js"></script>
+
     <!--custom JS-->
     <script>
+        /* index page animation */
         $("#animation").each(function (img_tag) {
             if (/.*\.gif/.test(img_tag.src)) {
                 var rub = new SuperGif({ gif: img_tag });
