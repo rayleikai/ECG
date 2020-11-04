@@ -134,7 +134,7 @@
             <div class="column middle aligned">
                 <div class="container">
                     <div style="display: flex; justify-content: center;">
-                        <div class="ui medium image">
+                        <div><!--class="ui medium image"-->
                             <!--rel:animated_src="./example1.gif"-->
                             <img id="animation" src="images/run.gif" rel:auto_play="1" rel:rubbable="1" />
                         </div>
@@ -313,10 +313,6 @@
         });*/
         var runner = new SuperGif({ gif: document.getElementById('animation') });
         runner.load();
-        $(document).ready(() => {
-            $(".jsgif>canvas").style.height = 150 + "px";
-        })
-
 
 
         /* heartbeat */
