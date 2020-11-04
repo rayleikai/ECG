@@ -493,8 +493,8 @@
         };
 
         var setSizes = function(w, h) {
-            canvas.width = w * get_canvas_scale();
-            canvas.height = h * get_canvas_scale();
+            canvas.width = 285/*w * get_canvas_scale()*/;
+            canvas.height = 160/*h * get_canvas_scale()*/;
             toolbar.style.minWidth = ( w * get_canvas_scale() ) + 'px';
 
             tmpCanvas.width = w;
