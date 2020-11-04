@@ -7,6 +7,10 @@
     <meta name="theme-color" content="#343a40">
     <title>Muscle</title>
 
+    <!--giflib-->
+    <script type="text/javascript" src="libgif.js"></script>
+    <script type="text/javascript" src="rubbable.js"></script>
+
     <!--manifest.json-->
     <link rel="manifest" href="manifest.json">
 
@@ -126,7 +130,6 @@
             color: var(--secondary);
         }
     </style>
-    <
 </head>
 
 <body>
@@ -136,7 +139,8 @@
                 <div class="container">
                     <div style="display: flex; justify-content: center;">
                         <div class="ui medium image">
-                            <gif-player src="https://media.giphy.com/media/TN0GTccRi7Ixa/giphy.gif" speed="0.5" play></gif-player>
+                            <!--rel:animated_src="./example1.gif"-->
+                            <img id="animation" src="images/run.gif" rel:auto_play="1" rel:rubbable="1" />
                         </div>
                     </div>
                     <div>
@@ -288,23 +292,6 @@
         }
     </script>
 
-    <!--X-gif-->
-    <!--
-    <script>
-        if ('registerElement' in document
-            && 'createShadowRoot' in HTMLElement.prototype
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template')) {
-            // We're using a browser with native WC support!
-        } else {
-            document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
-        }
-    </script>
-    <link rel="import" href="https://elercraft.github.io/ECG/x-gif.html">
-    -->
-
-    <link rel="import" href="gif-player/gif-player.html">
-
     <!--semantic ui JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
         integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
@@ -312,6 +299,15 @@
 
     <!--custom JS-->
     <script>
+        $("#animation").each(function (img_tag) {
+            if (/.*\.gif/.test(img_tag.src)) {
+                var rub = new SuperGif({ gif: img_tag });
+                rub.load(function () {
+                    console.log('oh hey, now the gif is loaded');
+                });
+            }
+        });
+
         /* heartbeat */
         /*
         function heartbeat() {
