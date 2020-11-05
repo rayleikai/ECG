@@ -360,9 +360,9 @@
             ctx.drawImage(character, srcX, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
         }
 
-        $(document).ready(() => {
+        character.onload = function(){
             setInterval(draw, 50);
-        });
+        }
 
         /* bottom navbar control */
         $(".ui.three.tabs>.item").on("click", function () {
