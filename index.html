@@ -342,7 +342,7 @@
         //image control
         var currentFrame = 0;
         const frameCount = 8;
-        var srcX;
+        var srcX = 0;
         const srcY = 0;
 
         //canvas setting
@@ -378,7 +378,10 @@
         }
 
         let running;
-        character.onload = RUN();
+        //character.onload = RUN();
+        character.onload = function(){
+            ctx.drawImage(character, 3 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+        }
 
         /* bottom navbar control */
         $(".ui.three.tabs>.item").on("click", function () {
