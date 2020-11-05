@@ -134,9 +134,7 @@
             <div class="column middle aligned">
                 <div class="container">
                     <div style="display: flex; justify-content: center;">
-
                         <canvas id='canvas' style="background-color: dimgray;"></canvas>
-
                     </div>
                     <div>
                         <div class="medium ui buttons">
@@ -362,7 +360,9 @@
             ctx.drawImage(character, srcX, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
         }
 
-        setInterval(draw, 50);
+        $(document).ready(() => {
+            setInterval(draw, 50);
+        });
 
         /* bottom navbar control */
         $(".ui.three.tabs>.item").on("click", function () {
