@@ -1,5 +1,5 @@
 # Progressive Web Apps (PWA)
 
 Demo   
-https://elercraft.github.io/ECG/index3.html   
+https://elercraft.github.io/ECG   
 
