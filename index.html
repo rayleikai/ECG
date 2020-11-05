@@ -142,6 +142,12 @@
                             <button class="ui green basic button">Connect</button>
                             <button class="ui red basic button">Stop</button>
                         </div>
+                        <div>
+                            <div class="medium ui buttons">
+                                <button onclick="RUN(running)" class="ui basic button">RUN</button>
+                                <button onclick="STOP(running)" class="ui basic button">STOP</button>
+                            </div>
+                        </div>
                         <div class="ui huge header">Data</div>
                     </div>
                 </div>
@@ -360,9 +366,19 @@
             ctx.drawImage(character, srcX, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
         }
 
-        character.onload = function(){
-            setInterval(draw, 50);
+        function RUN() {
+            running = setInterval(draw, 50);
         }
+
+        function STOP() {
+            clearInterval(running);
+            ctx.clearRect(0, 0, frameWidth, frameHeight);
+            ctx.drawImage(character, 3 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+            //console.log(running);
+        }
+
+        let running;
+        character.onload = RUN();
 
         /* bottom navbar control */
         $(".ui.three.tabs>.item").on("click", function () {
