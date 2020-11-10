@@ -298,39 +298,6 @@
 
     <!--custom JS-->
     <script>
-        /* heartbeat */
-        /*
-        function heartbeat() {
-            let heart = $(".ui.small.centered.image")[0];
-            var size = 150;
-            var repeat = setInterval(frame, 15);
-            var expand = true;
-
-            function frame() {
-                let IndexActive = $(`[data-tab = index]`)[0].classList.contains("active");
-                if (IndexActive) {
-                    if (expand === true) {
-                        size++;
-                        if (size === 160) {
-                            expand = false;
-                        }
-                    } else {
-                        size--;
-                        if (size === 150) {
-                            expand = true;
-                        }
-                    }
-                    heart.style.height = size + "px";
-                    heart.style.width = size + "px";
-                    //console.log('beating');
-                } else {
-                    clearInterval(repeat);
-                }
-
-            }
-        }
-        heartbeat(); //initialize */
-
         // image info
         const imgWidth = 864;
         const imgHeight = 280;
@@ -410,12 +377,6 @@
                     interval: 120
                 });
             }
-
-            /*
-            if (next === "index") {
-                heartbeat();
-            }
-            */
         });
 
         /* bluetooth */
