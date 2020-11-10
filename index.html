@@ -47,8 +47,8 @@
             text-align: center;
         }
 
-        .medium.ui.buttons {
-            margin: 4rem 0px 1rem 0px;
+        .ui.button {
+            margin: 4rem 1rem 4rem 1rem;
         }
 
         /* profile page */
@@ -137,15 +137,15 @@
                         <canvas id='canvas'></canvas>
                     </div>
                     <div>
-                        <div class="medium ui buttons">
-                            <button class="ui blue basic button">Scan</button>
-                            <button class="ui green basic button">Connect</button>
-                            <button class="ui red basic button">Stop</button>
-                        </div>
+
+                        <button class="ui blue basic button">Scan</button>
+                        <button class="ui green basic button">Connect</button>
+                        <button class="ui red basic button">Stop</button>
+
                         <div>
                             <div class="medium ui buttons">
-                                <button onclick="RUN(running)" class="ui basic button">RUN</button>
-                                <button onclick="STOP(running)" class="ui basic button">STOP</button>
+                                <button onclick="RUN()" class="ui basic button">RUN</button>
+                                <button onclick="STOP()" class="ui basic button">STOP</button>
                             </div>
                         </div>
                         <div class="ui huge header">Data</div>
@@ -346,7 +346,7 @@
 
         let running;
         //character.onload = RUN();
-        character.onload = function(){
+        character.onload = function () {
             ctx.drawImage(character, 3 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
         }
 
