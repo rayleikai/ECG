@@ -265,7 +265,7 @@
     <!--bottom navbar-->
     <div class="fixed-bottom">
         <!--ui three item labeled icon menu tabs-->
-        <div class="ui three item menu tabs">
+        <div class="ui four item menu tabs">
             <a class="item active" data-tab="index" href="#">
                 <i class="home icon red"></i>
                 <b>Home</b>
@@ -358,7 +358,7 @@
         }
 
         /* bottom navbar control */
-        $(".ui.three.tabs>.item").on("click", function () {
+        $(".ui.four.tabs>.item").on("click", function () {
             let previous = $(this).parent().find(".active").attr("data-tab");
             let next = $(this).attr("data-tab");
             if (previous === next) {
