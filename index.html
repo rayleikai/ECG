@@ -307,18 +307,17 @@
     <!--custom JS-->
     <script>
         // image info
-        const imgWidth = 864;
-        const imgHeight = 280;
-        const rows = 2;
-        const cols = 8;
-        const frameWidth = imgWidth / cols;
-        const frameHeight = imgHeight / rows;
+        const imgWidth = 5280;
+        const imgHeight = 179;
+        const frameNum = 40;
+        const frameWidth = imgWidth / frameNum;
+        const frameHeight = imgHeight;
 
         //image control
-        var currentFrame = 0;
-        const frameCount = 8;
-        var srcX = 0;
+        let currentFrame = 0;
+        let srcX = 0;
         const srcY = 0;
+        let running = 0;
 
         //canvas setting
         var canvas = document.getElementById('canvas');
@@ -328,10 +327,10 @@
 
         //character image
         var character = new Image();
-        character.src = "images/character.png";
+        character.src = "images/runner.png";
 
         function updateFrame() {
-            currentFrame = ++currentFrame % frameCount;
+            currentFrame = ++currentFrame % frameNum;
             srcX = currentFrame * frameWidth;
             ctx.clearRect(0, 0, frameWidth, frameHeight);
         }
@@ -342,20 +341,20 @@
         }
 
         function RUN() {
-            running = setInterval(draw, 50);
+            running = setInterval(draw, 20);
         }
 
         function STOP() {
             clearInterval(running);
             ctx.clearRect(0, 0, frameWidth, frameHeight);
-            ctx.drawImage(character, 3 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+            ctx.drawImage(character, 0 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
             //console.log(running);
         }
 
-        let running;
+
         //character.onload = RUN();
         character.onload = function () {
-            ctx.drawImage(character, 3 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+            ctx.drawImage(character, 0 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
         }
 
         /* bottom navbar control */
