@@ -411,7 +411,7 @@
 
         function scan() {
             navigator.bluetooth.requestDevice({
-                optionalServices: ['00001523-1212-efde-1523-785feabcd123'], /*'00001523-1212-efde-1523-785feabcd123'*/
+                optionalServices: ['0000FF04-0000-1000-8000-00805F9B34FB'], /*'00001523-1212-efde-1523-785feabcd123'*/
                 acceptAllDevices: true
             }).then(device => {
                 console.log(`選了${device.name}`);
@@ -427,11 +427,11 @@
             dev.gatt.connect()
                 .then(server => {
                     console.log(`server : ${server}`);
-                    return server.getPrimaryService('00001523-1212-efde-1523-785feabcd123');
+                    return server.getPrimaryService('0000FF04-0000-1000-8000-00805F9B34FB');
                 })
                 .then(service => {
                     console.log(`service : ${service}`);
-                    return service.getCharacteristic('713d0002-503e-4c75-ba94-3148f18d941e');
+                    return service.getCharacteristic('0000AA04-0000-1000-8000-00805F9B34FB');
                 })
                 .then(chara => {
                     console.log(`chara : ${chara}`);
