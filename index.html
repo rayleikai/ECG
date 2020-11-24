@@ -439,7 +439,9 @@
                         c.addEventListener('characteristicvaluechanged', function (e) {
                             console.log(this.value.buffer);
                             //在網頁上印出data
-                            document.getElementById('data').innerHTML = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
+                            ddd = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
+                            console.log(ddd);
+                            //document.getElementById('data').innerHTML = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
                         });
 
                     })
