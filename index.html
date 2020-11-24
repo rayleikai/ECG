@@ -149,7 +149,7 @@
                                 <button onclick="STOP()" class="ui basic button">STOP</button>
                             </div>
                         </div>
-                        <div class="ui huge header">Data</div>
+                        <div id="bluetooth_data" class="ui huge header">Data</div>
                     </div>
                 </div>
             </div>
@@ -441,7 +441,7 @@
                             //在網頁上印出data
                             ddd = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
                             console.log(ddd);
-                            //document.getElementById('data').innerHTML = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
+                            document.getElementById('bluetooth_data').innerHTML = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
                         });
 
                     })
