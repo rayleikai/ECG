@@ -387,6 +387,14 @@
         });
 
         /* bluetooth */
+        function AVE(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum / arr.length;
+        }
+
         let curretDevice = "";
 
         $(".button").click(ble);
@@ -439,10 +447,9 @@
                         c.addEventListener('characteristicvaluechanged', function (e) {
                             console.log(this.value.buffer);
                             //在網頁上印出data
-                            ddd = Array.from(new Uint8Array(this.value.buffer));
-                            console.log(ddd);
-                            console.log(ddd[0], ddd[19]);
-                            document.getElementById('bluetooth_data').innerHTML = "[" + Array.from(new Uint8Array(this.value.buffer)) + "]";
+                            let data_array = Array.from(new Uint8Array(this.value.buffer));
+                            let ave = AVE(data_array);
+                            document.getElementById('bluetooth_data').innerHTML = ave;
                         });
 
                     })
