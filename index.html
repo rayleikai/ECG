@@ -149,7 +149,7 @@
                                 <button class="ui basic button">STOP</button>
                             </div>
                         </div>
-                        <div id="bluetooth_data" class="ui huge header">Data</div>
+                        <div id="bluetooth_data" class="ui huge header" style="color:whitesmoke">Data</div>
                     </div>
                 </div>
             </div>
@@ -341,14 +341,17 @@
         }
 
         function RUN() {
-            running = setInterval(draw, 20);
+            if (running === 0) {
+                running = setInterval(draw, 20);
+            }
         }
 
         function STOP() {
             clearInterval(running);
+            running = 0;
             ctx.clearRect(0, 0, frameWidth, frameHeight);
             ctx.drawImage(character, 0 * frameWidth, srcY, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
-            //console.log(running);
+
         }
 
 
