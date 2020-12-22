@@ -446,7 +446,7 @@
                             //在網頁上印出data
                             let data_array = Array.from(new Uint8Array(this.value.buffer));
                             let ave = AVE(data_array);
-                            document.getElementById('bluetooth_data').innerHTML = ave;
+                            document.getElementById('bluetooth_data').innerHTML = data_array;
                         });
 
                     })
