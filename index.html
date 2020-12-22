@@ -392,6 +392,16 @@
             return sum / arr.length;
         }
 
+        function MAX(arr) {
+            let max = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max){
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
         let curretDevice = "";
 
         $(".button").click(ble);
@@ -446,7 +456,7 @@
                             //在網頁上印出data
                             let data_array = Array.from(new Uint8Array(this.value.buffer));
                             let ave = AVE(data_array);
-                            document.getElementById('bluetooth_data').innerHTML = data_array;
+                            document.getElementById('bluetooth_data').innerHTML = data_array + "<br>" + "maximum = " + MAX(data_array);
                         });
 
                     })
