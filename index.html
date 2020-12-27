@@ -742,8 +742,8 @@
         { "Time": "4.975", "Voltage": datasheet[198] },
         { "Time": "5", "Voltage": datasheet[199] }];
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
+    var ctx2 = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx2, {
         type: 'line',
         data: {
             labels: data.map(x => x.Time.slice(11, 16)),   //not sure x.Time.slice(11, 16)
