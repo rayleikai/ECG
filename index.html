@@ -744,6 +744,8 @@
 
     var canvas_chart = document.getElementById('myChart');
     var ctx_chart = canvas_chart.getContext("2d");
+        canvas.width = "350px";
+        canvas.height = "300px";
     var chart = new Chart(ctx_chart, {
         type: 'line',
         data: {
